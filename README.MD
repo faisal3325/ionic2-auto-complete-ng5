@@ -7,16 +7,6 @@ This component is super simple and light-weight. Just provide the data, and let 
 
 This is a **free software** please feel free to contribute! :)
 
-
-### Angular 5.0 Support
-
-Since Angular 5.0 was out, a several issues occured. 
-Thanks to @CoreyCole, most of them are gone now :)
-
-If you encounter another issues regrading Angular 5, pleae file an issue!
-
-For more info: https://github.com/kadoshms/ionic2-autocomplete/issues/128
-
 ### Installation
 ```
 $ npm install ionic2-auto-complete-ng5 save
@@ -208,7 +198,6 @@ Now when the `submit` method is called, the `country` is the selected country **
 
 **NOTE** As said above by default for backward compatibility, only the name is used as value not the country object.
 
-
 #### How to use another field as form value ? ####
 
 To indicate that you don't want the label as value but another field of the country object returned by the REST service, you can specify the attribute **formValueAttribute** on your dataProvider. For example, we want to use the country numeric code as value and still use the country name as label.
@@ -378,12 +367,7 @@ Available methods:
 2. getSelection(): `this.searchbar.getSelection()` - get the selected object
 3. setFocus(): `this.searchbar.setFocus()` - focus on searchbar
 
-## ngModel (since 1.5.3) ##
-
-Many thanks to [bushybuffalo](https://github.com/bushybuffalo) for contributing this cool feature.
-You can now bind the component with an ngModel.
-Please note that if you use an object as your model, the component will try to achieve the initial keyword value using the labelAttribute.
-For plain string models, it will just use the value itself.
-
 ## Credits ##
 * [kadoshms](https://github.com/kadoshms/) for the original component and for this README
+* [CoreyCole](https://github.com/CoreyCole) for the Angular 5 support
+* [bushybuffalo](https://github.com/bushybuffalo) for ngModel support
