@@ -1,6 +1,6 @@
 {
   "name": "ionic2-auto-complete-ng5",
-  "version": "1.0.2-release",
+  "version": "1.0.3-release",
   "scripts": {
     "build": "gulp build",
     "build:watch": "gulp",
