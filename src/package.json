@@ -1,0 +1,28 @@
+{
+  "name": "ionic2-auto-complete-ng5",
+  "version": "1.0.2-release",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/faisal3325/-ionic2-auto-complete-ng5"
+  },
+  "author": {
+    "name": "Pathan Faisal Khan",
+    "email": "faisal3325@gmail.com"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/faisal3325/-ionic2-auto-complete-ng5/issues"
+  },
+  "main": "ionic2-auto-complete-ng5.umd.js",
+  "module": "ionic2-auto-complete-ng5.js",
+  "jsnext:main": "ionic2-auto-complete-ng5.js",
+  "typings": "ionic2-auto-complete-ng5.d.ts",
+  "peerDependencies": {
+    "@angular/core": "5.0.5",
+    "rxjs": "5.5.3",
+    "zone.js": "0.8.18"
+  }
+}

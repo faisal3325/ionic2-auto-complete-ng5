@@ -1,0 +1,30 @@
+<ion-input #inputElem (keyup)="getItems($event)" (tap)="(showResultsFirst || keyword.length > 0) && getItems()" [(ngModel)]="keyword"
+    (ngModelChange)="updateModel()" [placeholder]="options.placeholder == null ? defaultOpts.placeholder : options.placeholder"
+    [type]="options.type == null ? defaultOpts.type : options.type" [clearOnEdit]="options.clearOnEdit == null ? defaultOpts.clearOnEdit : options.clearOnEdit"
+    [clearInput]="options.clearInput == null ? defaultOpts.clearInput : options.clearInput" [disabled]="disabled" [ngClass]="{'hidden': !useIonInput}"
+    (ionFocus)="onFocus()" (ionBlur)="onBlur()">
+</ion-input>
+<ion-searchbar #searchbarElem (ionInput)="getItems($event)" (tap)="(showResultsFirst || keyword.length > 0) && getItems()"
+    [(ngModel)]="keyword" (ngModelChange)="updateModel()" [cancelButtonText]="options.cancelButtonText == null ? defaultOpts.cancelButtonText : options.cancelButtonText"
+    [showCancelButton]="options.showCancelButton == null ? defaultOpts.showCancelButton : options.showCancelButton" [debounce]="options.debounce == null ? defaultOpts.debounce : options.debounce"
+    [placeholder]="options.placeholder == null ? defaultOpts.placeholder : options.placeholder" [autocomplete]="options.autocomplete == null ? defaultOpts.autocomplete : options.autocomplete"
+    [autocorrect]="options.autocorrect == null ? defaultOpts.autocorrect : options.autocorrect" [spellcheck]="options.spellcheck == null ? defaultOpts.spellcheck : options.spellcheck"
+    [type]="options.type == null ? defaultOpts.type : options.type" [disabled]="disabled" [ngClass]="{'hidden': useIonInput}"
+    (ionClear)="clearValue(true)" (ionFocus)="onFocus()" (ionBlur)="onBlur()">
+</ion-searchbar>
+<ng-template #defaultTemplate let-attrs="attrs">
+    <span [innerHTML]='attrs.label | boldprefix:attrs.keyword'></span>
+</ng-template>
+<ul *ngIf="!disabled && suggestions.length > 0 && showList">
+    <li *ngFor="let suggestion of suggestions" (tap)="select(suggestion);$event.srcEvent.stopPropagation()">
+        <ng-template [ngTemplateOutlet]="template || defaultTemplate" [ngTemplateOutletContext]="
+          {attrs:{ 
+            data: suggestion, 
+            label: getLabel(suggestion),
+            keyword: keyword,
+            formValue: getFormValue(suggestion), 
+            labelAttribute: dataProvider.labelAttribute, 
+            formValueAttribute: dataProvider.formValueAttribute }}"></ng-template>
+    </li>
+</ul>
+<p *ngIf="suggestions.length == 0 && showList && options.noItems">{{ options.noItems }}</p>
