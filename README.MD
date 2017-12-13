@@ -7,6 +7,9 @@ This component is super simple and light-weight. Just provide the data, and let 
 
 This is a **free software** please feel free to contribute! :)
 
+### NPM
+https://www.npmjs.com/package/ionic2-auto-complete-ng5
+
 ### Installation
 ```
 $ npm install ionic2-auto-complete-ng5 save
